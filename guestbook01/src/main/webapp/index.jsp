@@ -35,12 +35,12 @@ List<GuestbookVo> list = new GuestbookDao().findAll();
 	<br>
 
 	<%
-	int count = 1;
+	int count = list.size();
 	for (GuestbookVo gvo : list) {
 	%>
 	<table width=510 border=1>
 		<tr>
-			<td><%=count++%></td>
+			<td><%=count--%></td>
 			<td><%=gvo.getName()%></td>
 			<td><%=gvo.getDate()%></td>
 			<td><a href="deleteform.jsp?no=<%=gvo.getNo() %>" >삭제</a></td>
