@@ -9,33 +9,38 @@
 	</parent>
 	<artifactId>helloweb</artifactId>
 	<packaging>war</packaging>
-  
-       <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
-      <maven.compiler.source>17</maven.compiler.source>
-      <maven.compiler.target>17</maven.compiler.target>
-   </properties>
-   
-   <dependencies>
-	   	<!-- servlet-->
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<!-- servlet-->
 		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
-		    <version>4.0.1</version>
-		    <scope>provided</scope>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
 		</dependency>
-				
+
 		<dependency>
-		    <groupId>javax.servlet.jsp</groupId>
-		    <artifactId>jsp-api</artifactId>
-		    <version>2.2</version>
-		</dependency>		
-   </dependencies>
-   
-   <build>
-	   <finalName>helloweb</finalName>
-	   	<plugins>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>helloweb</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.2</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
@@ -44,7 +49,7 @@
 					<url>${tomcat.deploy.url}</url>
 					<server>poscodx-tomcat</server>
 				</configuration>
-			</plugin>			
+			</plugin>
 		</plugins>
-   </build>
+	</build>
 </project>
